@@ -33,7 +33,7 @@ body {
   gap: 1rem;
 }
 .create-meme > img {
-  width: 500px;
+  width: 400px;
 }
 .create-meme > .create-meme-form {
   display: flex;

@@ -1,3 +1,5 @@
+// * Der Router wurde von einem Auftrag aus dem Modul 294 übernommen.
+
 export default class Router {
   constructor(routes) {
     this.routes = routes
@@ -8,16 +10,16 @@ export default class Router {
 
     this.navigate = (hash) => {
       let route = this.getRouteByHash(hash)
-      history.pushState({}, "", hash)
+      history.pushState({}, '', hash)
       route?.function()
     }
 
     this.getRouteByHash = (hash) => {
-      if (hash == "") {
-        return routes["home"]
+      if (hash == '') {
+        return routes['home']
       }
 
-      let route = routes["error"]
+      let route = routes['error']
       Object.keys(routes).forEach((key) => {
         if (routes[key].hash == hash) {
           route = routes[key]
@@ -26,7 +28,7 @@ export default class Router {
       return route
     }
 
-    addEventListener("hashchange", (e) => {
+    addEventListener('hashchange', (e) => {
       this.urlResolve()
     })
   }
